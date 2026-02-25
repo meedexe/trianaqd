@@ -383,59 +383,6 @@
     }
 
 
-    .toast{
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: min(360px, calc(100% - 36px));
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(35,55,35,.18);
-      border-radius: 16px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.16);
-      backdrop-filter: blur(10px);
-      overflow:hidden;
-      z-index: 50;
-    }
-    .toast.hidden{ display:none; }
-    .toast-inner{ padding: 14px 14px 14px 14px; }
-    .toast-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-    .toast-title{
-      font-family: var(--serifDisplay);
-      font-weight: 800;
-      color: rgba(34,55,35,.92);
-      display:flex;
-      align-items:center;
-      gap: 8px;
-    }
-    .toast-title small{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 700;
-      color: rgba(34,55,35,.60);
-    }
-    .close{
-      border:0;
-      background: transparent;
-      cursor: pointer;
-      padding: 6px 8px;
-      border-radius: 10px;
-      color: rgba(34,55,35,.65);
-      font-weight: 900;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    .close:hover{ background: rgba(35,55,35,.06); }
-    .toast p{
-      margin: 0;
-      color: rgba(31,42,31,.78);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 13px;
-      line-height: 1.55;
-    }
   </style>
 </head>
 
@@ -663,29 +610,5 @@
     </div>
   </div>
 
-  <aside class="toast" id="ramadanToast" role="status" aria-live="polite">
-    <div class="toast-inner">
-      <div class="toast-head">
-        <div class="toast-title">
-          <span>Ramadan Notice</span>
-          <small>🌙</small>
-        </div>
-        <button class="close" aria-label="Close notice" onclick="document.getElementById('ramadanToast').classList.add('hidden')">
-          ✕
-        </button>
-      </div>
-      <p>
-        In respect of the holy month of Ramadan, alcoholic beverages will not be served during this period.
-        Enjoy our special Ramadan menu and warm atmosphere.
-      </p>
-    </div>
-  </aside>
-
-  <script>
-    setTimeout(() => {
-      const t = document.getElementById('ramadanToast');
-      if (t) t.classList.add('hidden');
-    }, 12000);
-  </script>
 </body>
 </html>
