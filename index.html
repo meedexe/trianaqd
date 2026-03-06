@@ -1,614 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reviews • Triana</title>
-  <meta name="description" content="What guests say about Triana — Google & TripAdvisor reviews." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<title>Leave a Review • Triana</title>
 
-  <style>
-    :root{
-      --bg: #fbfbf7;
-      --ink: #1f2a1f;
-      --muted: #6d756d;
-      --card: #ffffff;
-      --border: rgba(35, 55, 35, .18);
-      --shadow: 0 18px 40px rgba(0,0,0,.08);
-      --brand: #2d4b2f;   
-      --brand2:#7a8a56;   
-      --cream: #f3f0e6;
-      --radius: 18px;
-      --serif: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", Times, serif;
-      --serifDisplay: "Playfair Display", "Libre Baskerville", ui-serif, Georgia, "Times New Roman", Times, serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; margin:0; padding:0; }
-    body{
-      font-family: var(--serif);
-      color: var(--ink);
-      background: var(--bg);
-      overflow-x: hidden;
-    }
+<style>
 
+:root{
+--brand:#2d4b2f;
+--brand2:#7a8a56;
+--bg:#fbfbf7;
+--card:#ffffff;
+--radius:18px;
+}
 
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      background: #546846;           
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      height: 64px;               
-      padding: 0 20px;               
-      display: flex;
-      align-items: center;
-    }
+body{
+margin:0;
+font-family:"Libre Baskerville", serif;
+background:var(--bg);
+color:#1f2a1f;
+}
 
-    .nav-container {
-      max-width: 1050px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;    
-      width: 100%;
-      height: 100%;
-    }
+.navbar{
+background:#546846;
+height:64px;
+display:flex;
+align-items:center;
+padding:0 20px;
+}
 
-    .brandlink {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-    }
+.brandlogo{
+height:36px;
+}
 
-    .brandlogo {
-      height: 38px;                  
-      width: auto;
-      display: block;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-      transition: height 0.2s ease;
-    }
+.wrap{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
 
-   
-    @media (max-width: 640px) {
-      .navbar {
-        height: 58px;
-        padding: 0 16px;
-      }
-      .brandlogo {
-        height: 32px;
-      }
-    }
+h1{
+font-family:"Playfair Display",serif;
+font-size:42px;
+margin-bottom:10px;
+}
 
-    @media (max-width: 480px) {
-      .navbar {
-        height: 54px;
-        padding: 0 12px;
-      }
-      .brandlogo {
-        height: 28px;
-      }
-    }
+.sub{
+color:#666;
+max-width:650px;
+margin:auto;
+}
 
-   
-	    .pattern{
-	      min-height: 100%;
-	      background-image: url('arabesque.svg');
-	      background-size: 80px 80px;
-	      background-repeat: repeat;
-	    }
+.prompt{
+margin-top:30px;
+background:#fff;
+padding:18px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-	    .wrap{
-	      width: min(1050px, calc(100% - 40px));
-	      margin: 0 auto;
-	      padding: 30px 0 80px;          
-	    }
-	    @media (max-width: 480px){
-	      .wrap{ width: calc(100% - 24px); }
-	    }
+.question{
+font-size:20px;
+margin-top:20px;
+font-weight:bold;
+}
 
+.cta{
+margin-top:25px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
 
-    .kicker{
-      text-align:center;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(45,75,47,.7);
-      margin-top: 6px;
-      margin-bottom: 10px;
-    }
+.btn{
+padding:14px 24px;
+border-radius:999px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+display:inline-flex;
+align-items:center;
+gap:10px;
+}
 
-    h1{
-      text-align:center;
-      font-family: var(--serifDisplay);
-      font-size: clamp(34px, 4vw, 50px);
-      margin: 0 0 10px;
-      color: rgba(34,55,35,.92);
-    }
+.google{
+background:#4285F4;
+animation:pulse 2s infinite;
+}
 
-    .sub{
-      text-align:center;
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.55;
-      font-size: 15px;
-    }
+.trip{
+background:#00AF87;
+}
 
-    .reviewPrompt{
-      max-width: 820px;
-      margin: 14px auto 0;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.75);
-      border: 1px solid rgba(35,55,35,.14);
-      box-shadow: 0 12px 28px rgba(0,0,0,.06);
-      backdrop-filter: blur(8px);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: rgba(31,42,31,.82);
-      line-height: 1.55;
-      font-size: 14px;
-      text-align: center;
-    }
-    .reviewPrompt p{ margin: 0; }
-    .reviewPrompt p + p{ margin-top: 8px; }
+.site{
+background:#546846;
+}
 
-    .ratingline{
-      margin: 10px auto 18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: rgba(34,55,35,.9);
-      font-weight: 700;
-    }
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(66,133,244,0.6);}
+70%{box-shadow:0 0 0 14px rgba(66,133,244,0);}
+100%{box-shadow:0 0 0 0 rgba(66,133,244,0);}
+}
 
-    .stars{
-      display:inline-flex;
-      gap:3px;
-      align-items:center;
-      transform: translateY(-1px);
-    }
-    .star{
-      width: 18px;
-      height: 18px;
-      display:inline-block;
-      background: conic-gradient(from 180deg, #e8d27a, #caa83a, #e8d27a);
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,.08));
-    }
-    .ratingmeta{
-      font-weight: 600;
-      color: rgba(34,55,35,.65);
-      font-size: 13px;
-    }
+.helper{
+font-size:13px;
+margin-top:10px;
+color:#666;
+}
 
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(35,55,35,.18), transparent);
-      margin: 28px 0 26px;
-    }
+.feedback{
+margin-top:20px;
+display:none;
+}
 
+textarea{
+width:100%;
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 10px;
-    }
-    @media (max-width: 840px){
-      .grid{ grid-template-columns: 1fr; }
-    }
+.send{
+margin-top:10px;
+background:#2d4b2f;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:999px;
+cursor:pointer;
+}
 
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset: 0 auto 0 0;
-      width: 6px;
-      background: linear-gradient(180deg, var(--brand2), var(--brand));
-      opacity: .85;
-    }
-
-    .card-inner{
-      padding: 18px 20px 18px 22px;
-    }
-
-    .card-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .source{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color: rgba(34,55,35,.78);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 700;
-      letter-spacing:.02em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
-    .logo{
-      width: 26px; height: 26px;
-      border-radius: 9px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,.06);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-    }
-    .logo svg,
-    .logo img{ width: 18px; height: 18px; object-fit: contain; display:block; }
-
-    .card-stars{
-      display:flex;
-      flex-direction: column;
-      align-items:flex-end;
-      gap: 4px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    .card-stars .stars{ transform:none; }
-    .date{
-      font-size: 12px;
-      color: rgba(34,55,35,.55);
-      font-weight: 600;
-    }
-
-    .title{
-      font-size: 18px;
-      margin: 4px 0 8px;
-      font-family: var(--serifDisplay);
-      color: rgba(34,55,35,.92);
-    }
-
-    .quote{
-      margin: 0;
-      color: rgba(31,42,31,.80);
-      font-size: 14px;
-      line-height: 1.7;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-
-    .card-bottom{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(35,55,35,.10);
-    }
-
-    .author{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: rgba(34,55,35,.75);
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .readlink{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--brand);
-      text-decoration:none;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(45,75,47,.18);
-      background: rgba(243,240,230,.55);
-      transition: transform .15s ease, background .15s ease;
-    }
-    .readlink:hover{ transform: translateY(-1px); background: rgba(243,240,230,.9); }
-
-    
-    .cta{
-      margin: 18px auto 0;
-      display:flex;
-      gap: 16px;
-      justify-content:center;
-      flex-direction: column;
-      align-items: stretch;
-      flex-wrap: wrap;
-    }
-    @media (min-width: 640px){
-      .cta{ flex-direction: row; align-items: center; }
-    }
-
-    .ctaBtn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration:none;
-      color: #fff;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 800;
-      letter-spacing: .01em;
-      box-shadow: 0 16px 32px rgba(0,0,0,.18);
-      transition: transform .15s ease, background .2s ease;
-      width: 100%;
-    }
-    @media (min-width: 640px){
-      .ctaBtn{ width: auto; }
-    }
-    .ctaBtn.ta{ background: #00AF87; }
-    .ctaBtn.ta:hover{ background: #008A68; }
-    .ctaBtn.google{ background: #4285F4; }
-    .ctaBtn.google:hover{ background: #3367D6; }
-    .ctaBtn.site{ background: #546846; }
-    .ctaBtn.site:hover{ background: #445a44; }
-
-    .ctaIconImg{
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      display:block;
-      flex: 0 0 auto;
-    }
-    .ctaIconImg.ta{
-      width: 120px;
-      height: 20px;
-      filter: brightness(0) invert(1);
-    }
-    @media (max-width: 480px){
-      .ctaIconImg.ta{ width: 108px; height: 18px; }
-    }
-    .ctaIconImg.site{
-      width: 22px;
-      height: 22px;
-    }
-
-
-  </style>
+</style>
 </head>
 
 <body>
 
-	  <div class="navbar">
-	    <div class="nav-container">
-	      <a class="brandlink" href="https://triana.ma" target="_blank" rel="noopener">
-	        <img class="brandlogo" src="logotriana@2x@2x.png" alt="Triana homepage" />
-	      </a>
-	    </div>
-	  </div>
+<div class="navbar">
+<a href="https://triana.ma">
+<img class="brandlogo" src="logotriana@2x@2x.png">
+</a>
+</div>
 
-  <div class="pattern" style="background-image: url('arabesque.svg'); background-repeat: repeat; background-size: 80px 80px;">
-    <div class="wrap">
-   
-      <div class="kicker">THE VOICE OF OUR VISITORS</div>
-      <h1>What They Say About Triana</h1>
+<div class="wrap">
 
-      <div class="ratingline" aria-label="Rating summary">
-        <span class="stars" aria-hidden="true">
-          <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-        </span>
-        <span>4.6 / 5</span>
-        <span class="ratingmeta">(4 recent reviews)</span>
-      </div>
+<h1>Share Your Experience</h1>
 
-      <p class="sub">
-        Your feedback helps us continuously refine the cultural bridge we build between Spain and Morocco.
-      </p>
+<p class="sub">
+Your feedback helps us improve and support our small team in Chefchaouen.
+</p>
 
-      <div class="reviewPrompt" aria-label="Review request">
-        <p>
-          We’re happy you’re here! If you had a great time, please leave us a review in a few words. It means a lot to our team and supports our small business. 🙏⭐️
-        </p>
-        <p>
-          Loved your visit? Please leave a review and tell us what you liked most (food, service, atmosphere). Thank you for your support! ⭐️
-        </p>
-      </div>
+<div class="prompt">
 
+<div class="question">
+Did you enjoy your experience at Triana?
+</div>
 
-      <div class="cta" aria-label="Add a review">
-        <a
-          href="https://www.tripadvisor.fr/Restaurant_Review-g304013-d23583212-Reviews-Triana-Chefchaouen_Tanger_Tetouan_Al_Hoceima.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ctaBtn ta"
-        >
-	          <img
-	            class="ctaIconImg ta"
-	            src="tripadvisor-wordmark.svg"
-	            alt=""
-	            aria-hidden="true"
-	          />
-          TripAdvisor
-        </a>
+<div class="cta">
 
-        <a
-          href="https://www.google.com/search?q=Restaurant+Triana+Chefchaouen+reviews"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ctaBtn google"
-        >
-	          <img
-	            class="ctaIconImg google"
-	            src="google-g.png"
-	            alt=""
-	            aria-hidden="true"
-	          />
-          Google Reviews
-        </a>
+<a class="btn google"
+href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID"
+target="_blank">
+⭐ Leave a Google Review
+</a>
 
-        <a
-          href="https://triana.ma"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ctaBtn site"
-        >
-	          <img
-	            class="ctaIconImg site"
-	            src="logotriana@2x@2x.png"
-	            alt=""
-	            aria-hidden="true"
-	          />
-          Visit our website
-        </a>
-      </div>
+<button class="btn site" onclick="showFeedback()">
+💬 Leave Private Feedback
+</button>
 
-      <div class="divider"></div>
+<a class="btn trip"
+href="https://www.tripadvisor.fr/Restaurant_Review-g304013-d23583212-Reviews-Triana-Chefchaouen_Tanger_Tetouan_Al_Hoceima.html"
+target="_blank">
+TripAdvisor
+</a>
 
-      <section class="grid" aria-label="Customer reviews">
-        <article class="card">
-          <div class="card-inner">
-            <div class="card-top">
-              <div class="source">
-                <span class="logo" aria-hidden="true" title="TripAdvisor">
-                  <img src="tripadvisor-icon.png" alt="" aria-hidden="true" />
-                </span>
-                <span>TripAdvisor</span>
-              </div>
+</div>
 
-              <div class="card-stars">
-                <span class="stars" aria-label="5 out of 5 stars">
-                  <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-                </span>
-                <span class="date">Oct 2025</span>
-              </div>
-            </div>
+<div class="helper">
+⭐ Takes less than 30 seconds and helps us a lot.
+</div>
 
-            <h3 class="title">Incredible View and Atmosphere!</h3>
-            <p class="quote">
-              “We had dinner here two nights in a row. The sunset views from the terrace were breathtaking,
-              and the live music was incredible. The goat cheese salad and fish platter were fantastic!”
-            </p>
+<div class="feedback" id="feedback">
 
-            <div class="card-bottom">
-              <div class="author">— Tim W.</div>
-              <a class="readlink" href="https://www.tripadvisor.fr/Restaurant_Review-g304013-d23583212-Reviews-Triana-Chefchaouen_Tanger_Tetouan_Al_Hoceima.html"
-                 target="_blank" rel="noopener">Read on TripAdvisor</a>
-            </div>
-          </div>
-        </article>
+<h3>Tell us how we can improve</h3>
 
-     
-        <article class="card">
-          <div class="card-inner">
-            <div class="card-top">
-              <div class="source">
-                <span class="logo" aria-hidden="true" title="Google">
-                  <img src="google-g.png" alt="" aria-hidden="true" />
-                </span>
-                <span>Google</span>
-              </div>
+<textarea rows="4" placeholder="Your feedback..."></textarea>
 
-              <div class="card-stars">
-                <span class="stars" aria-label="5 out of 5 stars">
-                  <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-                </span>
-                <span class="date">Nov 2025</span>
-              </div>
-            </div>
+<br>
 
-            <h3 class="title">Very good food and amazing view</h3>
-            <p class="quote">
-              “Might be one of the few decent modern restaurants in town. Food is very good and tasty.
-              Environment and entourage very good. The view is amazing.”
-            </p>
+<button class="send">Send Feedback</button>
 
-            <div class="card-bottom">
-              <div class="author">— Ahmed Hosny Zidan</div>
-        
-              <a class="readlink" href="https://www.google.com/search?q=Restaurant+Triana+Chefchaouen+reviews"
-                 target="_blank" rel="noopener">Read on Google</a>
-            </div>
-          </div>
-        </article>
+</div>
 
-    
-        <article class="card">
-          <div class="card-inner">
-            <div class="card-top">
-              <div class="source">
-                <span class="logo" aria-hidden="true" title="TripAdvisor">
-                  <img src="tripadvisor-icon.png" alt="" aria-hidden="true" />
-                </span>
-                <span>TripAdvisor</span>
-              </div>
+</div>
 
-              <div class="card-stars">
-                <span class="stars" aria-label="5 out of 5 stars">
-                  <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-                </span>
-                <span class="date">Oct 2025</span>
-              </div>
-            </div>
+</div>
 
-            <h3 class="title">A true oasis!</h3>
-            <p class="quote">
-              “The best meal we’ve had in Morocco. The food was scrumptious, the service was attentive,
-              and the restaurant was spotless. Highly recommend making a reservation for a patio table!”
-            </p>
+<script>
 
-            <div class="card-bottom">
-              <div class="author">— Anne-Maree W.</div>
-              <a class="readlink" href="https://www.tripadvisor.fr/Restaurant_Review-g304013-d23583212-Reviews-Triana-Chefchaouen_Tanger_Tetouan_Al_Hoceima.html"
-                 target="_blank" rel="noopener">Read on TripAdvisor</a>
-            </div>
-          </div>
-        </article>
+function showFeedback(){
+document.getElementById("feedback").style.display="block";
+}
 
-   
-        <article class="card">
-          <div class="card-inner">
-            <div class="card-top">
-              <div class="source">
-                <span class="logo" aria-hidden="true" title="Google">
-                  <img src="google-g.png" alt="" aria-hidden="true" />
-                </span>
-                <span>Google</span>
-              </div>
-
-              <div class="card-stars">
-                <span class="stars" aria-label="4 out of 5 stars">
-                  <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-                </span>
-                <span class="date">Nov 2024</span>
-              </div>
-            </div>
-
-            <h3 class="title">Delicious food and friendly staff</h3>
-            <p class="quote">
-              “We ordered the lamb tagine and beef tagine — wow, the flavors were perfectly balanced.
-              Great place with many vegan options too!”
-            </p>
-
-            <div class="card-bottom">
-              <div class="author">— Adriana R.</div>
-              <a class="readlink" href="https://www.google.com/search?q=Restaurant+Triana+Chefchaouen+reviews"
-                 target="_blank" rel="noopener">Read on Google</a>
-            </div>
-          </div>
-        </article>
-      </section>
-
-    </div>
-  </div>
+</script>
 
 </body>
 </html>
